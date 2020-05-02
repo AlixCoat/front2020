@@ -24,7 +24,6 @@ import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables'
 import { Configuration }                                     from '../configuration';
 
 
-
 @Injectable()
 export class BurgersService {
 
@@ -88,7 +87,7 @@ export class BurgersService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.request<BurgerDetail>('get',`${this.basePath}/burgers/${encodeURIComponent(String(id))}.json`,
+        return this.httpClient.request<BurgerDetail>('get',`${this.basePath}/burgers/${encodeURIComponent(String(id))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

@@ -1,9 +1,19 @@
-<div *ngIf="burger">
-  coucouc
-  <h2>{{burger.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{burger.id}}</div>
+<div *ngIf="burgerDetail"> <!-- Affiche les détails du burger sélectionné -->
+  <h2>{{burgerDetail.name | uppercase}} Details</h2>
   <div>
-    name : <span>{{burger.name}}</span>
+    <ul class="list-group">
+      <li class="list-group-item">Nutriscore : {{burgerDetail.nutriscore}} </li>
+      <li class="list-group-item">Nutriments  
+        <ul class="list-group">
+          <li class="list-group-item" *ngIf="burgerDetail.nutriments['energyKcal']" >Kcal : {{burgerDetail.nutriments['energyKcal']}}</li>
+          <li class="list-group-item" *ngIf="burgerDetail.nutriments['saturated-fat']"> Satured fat :  {{burgerDetail.nutriments['saturated-fat']}}</li>
+        </ul>
+      </li>
+      
+    </ul>
   </div>
-
+</div>
+<!-- Bouton pour revenir sur la page précédente -->
+<div class="m-1">
+  <button mat-raised-button color="primary" (click)="goBack()">Go back</button>
 </div>

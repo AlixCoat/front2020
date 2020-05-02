@@ -1,13 +1,25 @@
 <div class="row">
+  <!-- Affiche tous les burgers -->
   <div class="card" style="width: 18rem;" *ngFor="let burger of burgers">
-    <img src="{{burger.image}}" class="card-img-top" alt="burger">
-    <div class="card-body">
-      <h5 class="card-title">{{burger.name}}</h5>
-      <p class="card-text">Price : {{burger.price}}</p>
-      <a routerLink="/detail/{{burger.id}}" class="btn btn-primary">Voir les détails</a>
-    </div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{burger.name}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="{{burger.image}}" alt="Photo of a burger">
+      <mat-card-content>
+        <p>
+          {{burger.price}}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- Redirige vers la page de détails du burger sélectionné -->
+        <a mat-raised-button color="primary" routerLink="/detail/{{burger.id}}">Voir les détails</a>
+      </mat-card-actions>
+    </mat-card>
   </div>
 </div>
+
 
 
 

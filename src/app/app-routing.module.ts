@@ -5,7 +5,8 @@ import { BurgerDetailComponent } from './burger-detail/burger-detail.component'
 
 const routes: Routes = [
   { path: 'detail/:id', component: BurgerDetailComponent },
-  { path: 'burgers', component: BurgersComponent }
+  { path: 'burgers', component: BurgersComponent },
+  { path: '', redirectTo: '/burgers', pathMatch: 'full' }
 ];
 
 @NgModule({

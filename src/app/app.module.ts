@@ -5,11 +5,15 @@ import { AppComponent } from './app.component';
 import { ApiModule } from './burgerservice';
 
 import { BurgersComponent } from './burgers/burgers.component'
-import { HttpClientModule }    from '@angular/common/http';
-
 import { BurgerDetailComponent } from './burger-detail/burger-detail.component';
-import { AppRoutingModule } from './app-routing.module'
 
+import { HttpClientModule }    from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
+//Material
+import { MatCardModule } from '@angular/material/card'; 
+import { MatButtonModule } from '@angular/material/button'; 
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { AppRoutingModule } from './app-routing.module'
     BrowserModule,
     HttpClientModule,
     ApiModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
